@@ -1,7 +1,6 @@
 // PA5 - LED
 // 0x4800 0000 - GPIOA
 // 0x4002 1000 - RCC
-#include <stdint.h>
 #define RCC_BASE_ADDR 0x40021000U
 #define GPIO_BASE_ADDR 0x48000000U
 
@@ -14,7 +13,7 @@
 #define GPIOA_ODR_OFFSET  0x14U
 #define GPIOA_ODR_REG     (*(unsigned int volatile *)(GPIO_BASE_ADDR + GPIOA_ODR_OFFSET))
 
-void delay(volatile uint32_t d)
+void delay(volatile unsigned int d)
 {
 	while(d--);
 }
